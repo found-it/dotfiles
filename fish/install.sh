@@ -1,8 +1,6 @@
 #
 # Install fish config
 #
-printf "[fish] start install\n"
-
 FISH_CONFIG_DIR="${HOME}/.config/fish"
 mkdir -p "${FISH_CONFIG_DIR}"
 
@@ -16,5 +14,3 @@ for filepath in ${SRC_FUNCTIONS_DIR}/*; do
   filename=$(basename "${filepath}")
   ln -s "${SRC_FUNCTIONS_DIR}/${filename}" "${DST_FUNCTIONS_DIR}/${filename}"
 done
-
-printf "[fish] done installing\n"

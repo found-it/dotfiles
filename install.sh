@@ -7,8 +7,13 @@ execute_install() {
 }
 
 main() {
-    execute_install "tmux"
-    execute_install "fish"
+  for dir in ./*; do
+    if [ -d ${dir} ]; then
+      printf "[$(basename ${dir})] Install\n"
+      execute_install "${dir}"
+      printf "[$(basename ${dir})] Done\n"
+    fi
+  done
 }
 
 main
