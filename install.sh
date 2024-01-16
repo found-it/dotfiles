@@ -1,3 +1,6 @@
+#
+# Execute all install scripts
+#
 
 execute_install() {
   directory="${1}"
