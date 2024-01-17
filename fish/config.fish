@@ -1,15 +1,7 @@
-if status is-interactive
-    # Commands to run in interactive sessions can go here
-    eval (/opt/homebrew/bin/brew shellenv)
-end
-
 #
 # File: config.fish
 # Author: found-it
 #
-
-# Aliases
-# TODO: Do this more fish-like
 
 # Single letters
 alias n='nerdctl'
@@ -27,6 +19,19 @@ alias lsg='eza --long --header --icons --git'
 alias lst='eza --icons --tree'
 alias lsi='eza --icons --long --octal-permissions --header'
 alias cat='bat -p'
+
+# Set up environment variables
+fish_add_path $HOME/.local/bin
+
+# TODO: Use GOPATH or GOBIN
+fish_add_path $HOME/go/bin
+
+# TODO: Only run if brew exists
+if status is-interactive
+    # Commands to run in interactive sessions can go here
+    eval (/opt/homebrew/bin/brew shellenv)
+end
+
 
 if command -q starship
     starship init fish | source

@@ -70,35 +70,41 @@ return {
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
     end
 
-    -- configure html server
-    lspconfig["html"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
+    -- Servers with standard setup. Custom setups should not go in this list
+    local servers = {
+      "tsserver",
+      "html",
+      "cssls",
+      "pyright",
+      "gopls",
+      "typos_lsp",
+      "bashls",
+      "clangd",
+      "dockerls",
+      "helm_ls",
+      "jsonls",
+      "lua_ls",
+      "marksman",
+      -- "ruby_ls",
+      "rust_analyzer",
+      "taplo",
+      "terraformls",
+      "tflint",
+      "hydra_lsp",
+    }
 
-    -- configure typescript server with plugin
-    lspconfig["tsserver"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
-
-    -- configure css server
-    lspconfig["cssls"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
+    for _, server in ipairs(servers) do
+      lspconfig[server].setup({
+        capabilities = capabilities,
+        on_attach = on_attach,
+      })
+    end
 
     -- configure graphql language server
     lspconfig["graphql"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
       filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
-    })
-
-    -- configure python server
-    lspconfig["pyright"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
     })
 
     -- configure lua server (with special settings)
