@@ -36,3 +36,6 @@ end
 if command -q starship
     starship init fish | source
 end
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/james/.google-cloud-sdk/path.fish.inc' ]; . '/Users/james/.google-cloud-sdk/path.fish.inc'; end
