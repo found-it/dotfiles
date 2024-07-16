@@ -19,6 +19,7 @@ alias lsg='eza --long --header --icons --git'
 alias lst='eza --icons --tree'
 alias lsi='eza --icons --long --octal-permissions --header'
 alias cat='bat -p'
+alias dsh='docker run -it --entrypoint sh'
 
 # Set up environment variables
 fish_add_path $HOME/.local/bin

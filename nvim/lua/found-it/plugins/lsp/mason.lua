@@ -47,7 +47,7 @@ return {
         "taplo",
         "terraformls",
         "tflint",
-        "hydra_lsp",
+        "yamlls",
         -- "goimports",
         -- "dockerfile-language-server",
         -- "actionlint",
