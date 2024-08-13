@@ -20,8 +20,8 @@ config.macos_window_background_blur = 20
 -- Fonts
 -- config.font = wezterm.font 'FiraCode Nerd Font'
 -- config.font = wezterm.font 'Monaspace Krypton'
--- config.font = wezterm.font 'Monaspace Neon'
-config.font = wezterm.font 'Monaspace Argon'
+config.font = wezterm.font 'Monaspace Neon'
+-- config.font = wezterm.font 'Monaspace Argon'
 -- config.font = wezterm.font 'Monaspace Xenon'
 -- config.font = wezterm.font 'Monaspace Radon'
 

@@ -1,4 +1,11 @@
+## TODO
+
+- [ ] Document nix installation and setup
+- [ ] Automate the tpm install `git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`
+
 ## Installing stuff
+
+Use `nix` now
 
 ### Brew
 
