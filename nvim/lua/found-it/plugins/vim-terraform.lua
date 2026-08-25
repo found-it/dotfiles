@@ -1,9 +1,7 @@
 return {
   "hashivim/vim-terraform",
   init = function()
-    vim.api.nvim_create_autocmd({'BufWritePre'}, {
-      pattern = '*.tf',
-      command = "TerraformFmt"
-    })
+    vim.g.terraform_binary_path = "tofu"
+    vim.g.terraform_fmt_on_save = true
   end,
 }

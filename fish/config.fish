@@ -13,6 +13,8 @@ alias kc='kubecolor'
 alias wk='watch -c kubecolor --force-colors'
 alias kim='kubectl get pods -o custom-columns=CONTAINER:.spec.containers[0].name,IMAGE:.spec.containers[0].image'
 
+alias cm='cargo make'
+
 # File listing
 alias ls='eza --icons'
 alias lsg='eza --long --header --icons --git'
@@ -20,6 +22,10 @@ alias lst='eza --icons --tree'
 alias lsi='eza --icons --long --octal-permissions --header'
 alias cat='bat -p'
 alias dsh='docker run -it --entrypoint sh'
+
+alias broccoli='ssh james@broccoli'
+
+set -x SSH_AUTH_SOCK /Users/james/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/socket.ssh
 
 # Set up environment variables
 fish_add_path $HOME/.local/bin
@@ -33,10 +39,16 @@ if status is-interactive
     eval (/opt/homebrew/bin/brew shellenv)
 end
 
-
 if command -q starship
     starship init fish | source
 end
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/james/.google-cloud-sdk/path.fish.inc' ]; . '/Users/james/.google-cloud-sdk/path.fish.inc'; end
+if [ -f '/Users/james/.google-cloud-sdk/path.fish.inc' ]
+    . '/Users/james/.google-cloud-sdk/path.fish.inc'
+end
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/james/.google-cloud-sdk/path.fish.inc' ]
+    . '/Users/james/.google-cloud-sdk/path.fish.inc'
+end

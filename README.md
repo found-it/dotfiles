@@ -1,6 +1,8 @@
 ## TODO
 
 - [ ] Document nix installation and setup
+- [ ] Save git config
+- [ ] Save starship config
 - [ ] Automate the tpm install `git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`
 
 ## Installing stuff

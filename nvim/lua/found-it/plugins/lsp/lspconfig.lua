@@ -86,7 +86,7 @@ return {
       "lua_ls",
       "marksman",
       -- "ruby_ls",
-      "rust_analyzer",
+      -- "rust_analyzer", handled by rustaceanvim
       "taplo",
       "terraformls",
       "tflint",
@@ -98,6 +98,13 @@ return {
         on_attach = on_attach,
       })
     end
+
+    -- configure rust language server
+    lspconfig.rust_analyzer.setup {
+      capabilities = capabilities,
+      on_attach = on_attach,
+      filetypes = { "rust" },
+    }
 
     -- configure graphql language server
     lspconfig["graphql"].setup({
@@ -141,7 +148,6 @@ return {
                         ['https://json.schemastore.org/kustomization.json'] = 'kustomization.{yml,yaml}',
                         ['https://raw.githubusercontent.com/docker/compose/master/compose/config/compose_spec.json'] = 'docker-compose*.{yml,yaml}',
                         ["https://raw.githubusercontent.com/datreeio/CRDs-catalog/main/argoproj.io/application_v1alpha1.json"] = "argocd-application.yaml",
-                        ['https://raw.githubusercontent.com/chainguard-dev/melange/53c0bdb0c1a448dcec1cb48878979256015e0e84/pkg/config/schema.json'] = '*.yaml',
                     }
                 }
             }
